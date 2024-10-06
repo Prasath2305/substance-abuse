@@ -12,17 +12,23 @@ This project aims to detect potential substance abuse based on data collected fr
 
 To install the required packages, run:
 
->pip install -r requirements.txt
+```sh
+pip install -r requirements.txt
+```
 
 ## Setup and Usage
 
 ### Train the ML model by running the `train_model.py` script.
 
->python model/train_model.py
+```sh
+python model/train_model.py
+```
 
 ### Run the Flask Application
 
->python app.py
+```sh
+python app.py
+```
 
 ## Troubleshooting
 
