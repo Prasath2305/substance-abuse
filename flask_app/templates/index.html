@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Substance Abuse Detection</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">Sensor Data and Substance Abuse Detection</h1>
+
+        <h2>Recorded Data</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Sensor 1</th>
+                <th>Sensor 2</th>
+                <th>Sensor 3</th>
+                <!-- Add other sensors -->
+                <th>Substance Abuse</th>
+            </tr>
+            {% for entry in data %}
+            <tr>
+                <td>{{ entry.id }}</td>
+                <td>{{ entry.sensor1 }}</td>
+                <td>{{ entry.sensor2 }}</td>
+                <td>{{ entry.sensor3 }}</td>
+                <!-- Add other sensors -->
+                <td class="result {{ 'danger' if entry.abuse == 1 else 'safe' }}">{{ 'Yes' if entry.abuse == 1 else 'No' }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
